@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Wallpaper</title>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/style.css') }}">
+    <!-- <link rel="stylesheet" href="../static/css/style.css"> -->
+
+</head>
+<body>
+<div class="container">
+
+    <a download="wallpaper.jpg" href="{{links~'.jpg'}}" title="ImageName">
+     
+        <img src="{{links~'.jpg'}}" id="img" alt="image">
+    </a>
+    <!-- <img src="https://w0.peakpx.com/wallpaper/17/411/HD-wallpaper-goku-dragon-ball-8k-anime-anime-anime-dragon-ball-dragon-ball-z-goku-goku-goku.jpg" id="img"> -->
+
+</div>
+
+
+    <!-- You can now use the links_string if needed -->
+</body>
+</html>
