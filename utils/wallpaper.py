@@ -38,5 +38,5 @@ class Wallpaper:
             if matches:
                 links.append(matches)
         ran_first = random.randint(0,len(links))
-        return links[ran_first][1]
+        return links[ran_first][0]
 
