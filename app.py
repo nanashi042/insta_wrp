@@ -17,7 +17,7 @@ scheduler.start()
 manual_refresh = False
 
 @app.route('/')
-@cache.cached(timeout=5, key_prefix='img_links')  # Cache the result for 24 hours
+@cache.cached(timeout=60*60*24, key_prefix='img_links')  # Cache the result for 24 hours
 def hello_world():
     global manual_refresh
     if manual_refresh:
@@ -34,7 +34,7 @@ def get_img():
     yield links
 
 # Schedule the job to refresh the cache every 24 hours
-@scheduler.scheduled_job('interval', seconds=5)
+@scheduler.scheduled_job('interval', hours=24)
 def update_cache():
     cache.clear()
     print("Cache cleared.")
